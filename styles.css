@@ -8,7 +8,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: #f3f4f6;
+  background: #DCE6E8;
 }
 
 /* Sidebar Styles */
@@ -248,7 +248,7 @@ body {
 }
 
 .data-table thead {
-  background: #f1f5f9;
+  background: #1F2A2D;
 }
 
 .data-table th {
@@ -256,7 +256,7 @@ body {
   text-align: left;
   font-size: 14px;
   font-weight: 700;
-  color: #374151;
+  color: #ffffff;
 }
 
 .data-table td {
@@ -657,3 +657,4 @@ body {
 .mb-2 {
   margin-bottom: 8px;
 }
+
