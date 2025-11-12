@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions - Survey System</title>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="survey-info">
+                <div class="survey-logo">S</div>
+                <div class="survey-details">
+                    <h3>Survey</h3>
+                    <p>Admin Panel</p>
+                </div>
+            </div>
+        </div>
+        <nav class="nav-menu">
+            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="questions.html" class="nav-item active">Questions</a>
+            <a href="responses.html" class="nav-item">Responses</a>
+            <a href="reports.html" class="nav-item">Reports</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1>Questions</h1>
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="icons\User_01.png" alt="User" class="icon">
+                </div>
+                <div class="user-info">
+                    <h4>Admin User</h4>
+                    <p>Administrator</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="questions-content">
+            <div class="content-header">
+                <button class="btn btn-primary">
+                    <img src="icons\File_Add.png" alt="Add" class="btn-icon"> Add Question
+                </button>
+                <div class="header-actions">
+                    <button class="btn btn-secondary">
+                        <img src="icons\Folder_Upload.png" alt="Export" class="btn-icon"> Export Questions
+                    </button>
+                    <button class="btn btn-secondary">
+                        <img src="icons\Folder_Download.png" alt="Import" class="btn-icon"> Import Questions
+                    </button>
+                </div>
+            </div>
+
+            <div class="questions-container">
+                <div class="question-card">
+                    <div class="question-header">
+                        <div class="question-number">Q1</div>
+                        <div class="question-actions">
+                            <button class="icon-btn" title="Edit">
+                                <img src="icons\File_Edit.png" alt="Edit" class="action-icon">
+                            </button>
+                            <button class="icon-btn" title="Duplicate">
+                                <img src="icons\Files.png" alt="Duplicate" class="action-icon">
+                            </button>
+                            <button class="icon-btn delete" title="Delete">
+                                <img src="icons\Trash_Empty.png" alt="Delete" class="action-icon">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="question-body">
+                        <h3 class="question-text">How satisfied are you with our service?</h3>
+                        <div class="question-meta">
+                            <span class="question-type">Rating Scale (1-5)</span>
+                            <span class="question-status required">Required</span>
+                        </div>
+                        <div class="question-options">
+                            <div class="option-preview">1 - Very Dissatisfied</div>
+                            <div class="option-preview">2 - Dissatisfied</div>
+                            <div class="option-preview">3 - Neutral</div>
+                            <div class="option-preview">4 - Satisfied</div>
+                            <div class="option-preview">5 - Very Satisfied</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <div class="question-number">Q2</div>
+                        <div class="question-actions">
+                            <button class="icon-btn" title="Edit">
+                                <img src="icons\File_Edit.png" alt="Edit" class="action-icon">
+                            </button>
+                            <button class="icon-btn" title="Duplicate">
+                                <img src="icons\Files.png" alt="Duplicate" class="action-icon">
+                            </button>
+                            <button class="icon-btn delete" title="Delete">
+                                <img src="icons\Trash_Empty.png" alt="Delete" class="action-icon">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="question-body">
+                        <h3 class="question-text">How would you rate our staff?</h3>
+                        <div class="question-meta">
+                            <span class="question-type">Rating Scale (1-5)</span>
+                            <span class="question-status required">Required</span>
+                        </div>
+                        <div class="question-options">
+                            <div class="option-preview">1 - Very Dissatisfied</div>
+                            <div class="option-preview">2 - Dissatisfied</div>
+                            <div class="option-preview">3 - Neutral</div>
+                            <div class="option-preview">4 - Satisfied</div>
+                            <div class="option-preview">5 - Very Satisfied</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <div class="question-number">Q3</div>
+                        <div class="question-actions">
+                            <button class="icon-btn" title="Edit">
+                                <img src="icons\File_Edit.png" alt="Edit" class="action-icon">
+                            </button>
+                            <button class="icon-btn" title="Duplicate">
+                                <img src="icons\Files.png" alt="Duplicate" class="action-icon">
+                            </button>
+                            <button class="icon-btn delete" title="Delete">
+                                <img src="icons\Trash_Empty.png" alt="Delete" class="action-icon">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="question-body">
+                        <h3 class="question-text">What can we improve?</h3>
+                        <div class="question-meta">
+                            <span class="question-type">Long Text Response</span>
+                            <span class="question-status optional">Optional</span>
+                        </div>
+                        <div class="question-preview">
+                            <textarea class="preview-textarea" placeholder="Type your answer here..." disabled></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <div class="question-number">Q4</div>
+                        <div class="question-actions">
+                            <button class="icon-btn" title="Edit">
+                                <img src="icons\File_Edit.png" alt="Edit" class="action-icon">
+                            </button>
+                            <button class="icon-btn" title="Duplicate">
+                                <img src="icons\Files.png" alt="Duplicate" class="action-icon">
+                            </button>
+                            <button class="icon-btn delete" title="Delete">
+                                <img src="icons\Trash_Empty.png" alt="Delete" class="action-icon">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="question-body">
+                        <h3 class="question-text">Which branch did you visit?</h3>
+                        <div class="question-meta">
+                            <span class="question-type">Multiple Choice</span>
+                            <span class="question-status required">Required</span>
+                        </div>
+                        <div class="question-options">
+                            <div class="option-preview">Branch A</div>
+                            <div class="option-preview">Branch B</div>
+                            <div class="option-preview">Branch C</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-header">
+                        <div class="question-number">Q5</div>
+                        <div class="question-actions">
+                            <button class="icon-btn" title="Edit">
+                                <img src="icons\File_Edit.png" alt="Edit" class="action-icon">
+                            </button>
+                            <button class="icon-btn" title="Duplicate">
+                                <img src="icons\Files.png" alt="Duplicate" class="action-icon">
+                            </button>
+                            <button class="icon-btn delete" title="Delete">
+                                <img src="icons\Trash_Empty.png" alt="Delete" class="action-icon">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="question-body">
+                        <h3 class="question-text">Would you recommend us to others?</h3>
+                        <div class="question-meta">
+                            <span class="question-type">Yes/No</span>
+                            <span class="question-status required">Required</span>
+                        </div>
+                        <div class="question-options">
+                            <div class="option-preview">Yes</div>
+                            <div class="option-preview">No</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="questions-summary">
+                <div class="summary-info">
+                    <strong>Total Questions:</strong> 5 | <strong>Required:</strong> 4 | <strong>Optional:</strong> 1
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
