@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Survey System</title>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="survey-info">
+                <div class="survey-logo">S</div>
+                <div class="survey-details">
+                    <h3>Survey</h3>
+                    <p>Admin Panel</p>
+                </div>
+            </div>
+        </div>
+        <nav class="nav-menu">
+            <a href="dashboard.html" class="nav-item active">Dashboard</a>
+            <a href="questions.html" class="nav-item">Questions</a>
+            <a href="responses.html" class="nav-item">Responses</a>
+            <a href="reports.html" class="nav-item">Reports</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1>Dashboard</h1>
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="icons\User_01.png" alt="User" class="icon">
+                </div>
+                <div class="user-info">
+                    <h4>Admin User</h4>
+                    <p>Administrator</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Responses</h3>
+                    <div class="stat-value">827</div>
+                </div>
+                <div class="stat-card highlight">
+                    <h3>Average Satisfaction</h3>
+                    <div class="stat-value">4.2</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Response Rate</h3>
+                    <div class="stat-value">78%</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Surveys</h3>
+                    <div class="stat-value">3</div>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Satisfaction Trend Over Time</h3>
+                    <div class="chart-placeholder">
+                        <img src="icons\Chart_Line.png" alt="Line Chart" class="chart-icon">
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Branch Comparison</h3>
+                    <div class="chart-placeholder">
+                        <img src="icons\Chart_Bar_Vertical_01.png" alt="Bar Chart" class="chart-icon">
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-responses">
+                <h3>Recent Responses</h3>
+                <table class="response-table">
+                    <thead>
+                        <tr>
+                            <th>Response ID</th>
+                            <th>Date</th>
+                            <th>Respondent</th>
+                            <th>Branch</th>
+                            <th>Avg. Score</th>
+                            <th>View Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>R-0010</td>
+                            <td>2025-08-10 09:35</td>
+                            <td>Arya Stark</td>
+                            <td>Branch C</td>
+                            <td><span class="score-badge score-poor">2.0</span></td>
+                            <td><button class="view-btn" onclick="location.href='responses.html'"><img src="icons\Show.png" alt="View" class="btn-icon-small"> View</button></td>
+                        </tr>
+                        <tr>
+                            <td>R-0009</td>
+                            <td>2025-08-10 09:35</td>
+                            <td>Rory Gilmore</td>
+                            <td>Branch B</td>
+                            <td><span class="score-badge score-excellent">5.0</span></td>
+                            <td><button class="view-btn" onclick="location.href='responses.html'"><img src="icons\Show.png" alt="View" class="btn-icon-small"> View</button></td>
+                        </tr>
+                        <tr>
+                            <td>R-0008</td>
+                            <td>2025-08-10 09:35</td>
+                            <td>Whity</td>
+                            <td>Branch C</td>
+                            <td><span class="score-badge score-poor">2.0</span></td>
+                            <td><button class="view-btn" onclick="location.href='responses.html'"><img src="icons\Show.png" alt="View" class="btn-icon-small"> View</button></td>
+                        </tr>
+                        <tr>
+                            <td>R-0007</td>
+                            <td>2025-08-10 09:35</td>
+                            <td>Paulo</td>
+                            <td>Branch A</td>
+                            <td><span class="score-badge score-excellent">5.0</span></td>
+                            <td><button class="view-btn" onclick="location.href='responses.html'"><img src="icons\Show.png" alt="View" class="btn-icon-small"> View</button></td>
+                        </tr>
+                        <tr>
+                            <td>R-0006</td>
+                            <td>2025-08-10 09:36</td>
+                            <td>Misuki</td>
+                            <td>Branch A</td>
+                            <td><span class="score-badge score-good">4.0</span></td>
+                            <td><button class="view-btn" onclick="location.href='responses.html'"><img src="icons\Show.png" alt="View" class="btn-icon-small"> View</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
