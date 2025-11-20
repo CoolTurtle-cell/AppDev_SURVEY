@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Feedback Survey</title>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="survey-page">
+    <div class="survey-container">
+        <div class="survey-header-card">
+            <h1>Customer Feedback Survey</h1>
+            <p>Please take a few moments to share your feedback.</p>
+        </div>
+
+        <form class="survey-form" id="surveyForm">
+            <!-- Question 1 -->
+            <div class="survey-question-card">
+                <div class="question-label">
+                    <span class="question-num">Q1</span>
+                    <h3>How satisfied are you with our service?</h3>
+                    <span class="required-badge">Required</span>
+                </div>
+                <div class="rating-options">
+                    <label class="rating-option">
+                        <input type="radio" name="q1" value="1" required>
+                        <span class="rating-label">1 - Very Dissatisfied</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="q1" value="2" required>
+                        <span class="rating-label">2 - Dissatisfied</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="q1" value="3" required>
+                        <span class="rating-label">3 - Neutral</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="q1" value="4" required>
+                        <span class="rating-label">4 - Satisfied</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="q1" value="5" required>
+                        <span class="rating-label">5 - Very Satisfied</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="survey-question-card">
+                <div class="question-label">
+                    <span class="question-num">Q2</span>
+                    <h3>How would you rate our staff?</h3>
+                    <span class="required-badge">Required</span>
+                </div>
+                <div class="rating-options">
+                    <label class="rating-option">
+                        <input type="radio" name="q2" value="1" required>
+                        <span class="rating-label">1 - Very Dissatisfied</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="q2" value="2" required>
+                        <span class="rating-label">2 - Dissatisfied</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="q2" value="3" required>
+                        <span class="rating-label">3 - Neutral</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="q2" value="4" required>
+                        <span class="rating-label">4 - Satisfied</span>
+                    </label>
+                    <label class="rating-option">
+                        <input type="radio" name="q2" value="5" required>
+                        <span class="rating-label">5 - Very Satisfied</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="survey-question-card">
+                <div class="question-label">
+                    <span class="question-num">Q3</span>
+                    <h3>What can we improve?</h3>
+                    <span class="optional-badge">Optional</span>
+                </div>
+                <textarea class="survey-textarea" name="q3" placeholder="Type your answer here..." rows="5"></textarea>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="survey-question-card">
+                <div class="question-label">
+                    <span class="question-num">Q4</span>
+                    <h3>Which branch did you visit?</h3>
+                    <span class="required-badge">Required</span>
+                </div>
+                <div class="choice-options">
+                    <label class="choice-option">
+                        <input type="radio" name="q4" value="Branch A" required>
+                        <span class="choice-label">Branch A</span>
+                    </label>
+                    <label class="choice-option">
+                        <input type="radio" name="q4" value="Branch B" required>
+                        <span class="choice-label">Branch B</span>
+                    </label>
+                    <label class="choice-option">
+                        <input type="radio" name="q4" value="Branch C" required>
+                        <span class="choice-label">Branch C</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="survey-question-card">
+                <div class="question-label">
+                    <span class="question-num">Q5</span>
+                    <h3>Would you recommend us to others?</h3>
+                    <span class="required-badge">Required</span>
+                </div>
+                <div class="choice-options">
+                    <label class="choice-option">
+                        <input type="radio" name="q5" value="Yes" required>
+                        <span class="choice-label">Yes</span>
+                    </label>
+                    <label class="choice-option">
+                        <input type="radio" name="q5" value="No" required>
+                        <span class="choice-label">No</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="survey-actions">
+                <button type="submit" class="submit-survey-btn">Submit Survey</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('surveyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            alert('Thank you for completing the survey! Your feedback has been submitted.');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
