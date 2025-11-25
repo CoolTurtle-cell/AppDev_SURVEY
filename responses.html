@@ -1,316 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responses | Admin Dashboard</title>
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- Sidebar -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responses - Survey System</title>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
     <aside class="sidebar">
-      <div class="logo-section">
-        <div class="logo-box">
-          <div class="logo-icon">
-            <span>S</span>
-          </div>
-          <div class="logo-text">
-            <h1>Survey</h1>
-            <p>Admin Panel</p>
-          </div>
+        <div class="sidebar-header">
+            <div class="survey-info">
+                <div class="survey-logo">S</div>
+                <div class="survey-details">
+                    <h3>Survey</h3>
+                    <p>Admin Panel</p>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <nav class="nav-menu">
-        <button class="nav-item" onclick="location.href='dashboard.html'">
-          Dashboard
-        </button>
-
-        <button class="nav-item" onclick="location.href='questions.html'">
-          Questions
-        </button>
-
-        <button class="nav-item active">Responses</button>
-
-        <button class="nav-item" onclick="location.href='reports.html'">
-          Reports
-        </button>
-      </nav>
+        <nav class="nav-menu">
+            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="questions.html" class="nav-item">Questions</a>
+            <a href="responses.html" class="nav-item active">Responses</a>
+            <a href="reports.html" class="nav-item">Reports</a>
+        </nav>
     </aside>
 
-    <!-- Main Content -->
-    <div class="main-content">
-      <!-- Header -->
-      <header class="header">
-        <h2>Responses</h2>
-        <div class="user-profile">
-          <img src="icons/profile.svg" height="40px" width="40px" />
-          <div class="user-info">
-            <p>Admin User</p>
-            <span>Administrator</span>
-          </div>
+    <main class="main-content">
+        <header class="header">
+            <h1>Responses</h1>
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="icons/User_01.png" alt="User" class="icon">
+                </div>
+                <div class="user-info">
+                    <h4>Admin User</h4>
+                    <p>Administrator</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-content">
+            <!-- Filters -->
+            <div class="filter-section">
+                <div class="filter-grid">
+                    <div class="filter-item">
+                        <label>Date From</label>
+                        <input type="date" id="date-from">
+                    </div>
+                    <div class="filter-item">
+                        <label>Date To</label>
+                        <input type="date" id="date-to">
+                    </div>
+                    <div class="filter-item">
+                        <label>Branch/Location</label>
+                        <select id="branch-filter">
+                            <option value="">All Branches</option>
+                            <option value="Branch A">Branch A</option>
+                            <option value="Branch B">Branch B</option>
+                            <option value="Branch C">Branch C</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label>Category</label>
+                        <select id="category-filter">
+                            <option value="">All Categories</option>
+                            <option value="Service Quality">Service Quality</option>
+                            <option value="Staff Behavior">Staff Behavior</option>
+                            <option value="Facility">Facility</option>
+                            <option value="Wait Time">Wait Time</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label>&nbsp;</label>
+                        <button class="btn btn-primary" id="refresh-btn">Refresh</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Responses Table -->
+            <div class="table-container">
+                <table class="response-table">
+                    <thead>
+                        <tr>
+                            <th>Response ID</th>
+                            <th>Date Submitted</th>
+                            <th>Respondent</th>
+                            <th>Branch/Category</th>
+                            <th>Avg. Score</th>
+                            <th>View Details</th>
+                        </tr>
+                    </thead>
+                    <tbody id="responses-tbody">
+                        <!-- Example row -->
+                        <tr>
+                            <td>R-0001</td>
+                            <td>2025-11-08 14:32</td>
+                            <td>Anonymous</td>
+                            <td>Branch A / Service Quality</td>
+                            <td><span class="score-badge score-high">5.0</span></td>
+                            <td><button class="view-btn"><img src="icons/eye.svg" alt="View"> View</button></td>
+                        </tr>
+                        <!-- Add more rows -->
+                    </tbody>
+                </table>
+            </div>
         </div>
-      </header>
-
-      <!-- Page Content -->
-      <div class="page-content">
-        <!-- Filters -->
-        <div class="filter-section">
-          <div class="filter-grid">
-            <div class="filter-item">
-              <label>Date From</label>
-              <input type="date" id="date-from" />
-            </div>
-
-            <div class="filter-item">
-              <label>Date To</label>
-              <input type="date" id="date-to" />
-            </div>
-
-            <div class="filter-item">
-              <label>Branch/Location</label>
-              <select id="branch-filter">
-                <option value="">All Branches</option>
-                <option value="Branch A">Branch A</option>
-                <option value="Branch B">Branch B</option>
-                <option value="Branch C">Branch C</option>
-              </select>
-            </div>
-
-            <div class="filter-item">
-              <label>Category</label>
-              <select id="category-filter">
-                <option value="">All Categories</option>
-                <option value="Service Quality">Service Quality</option>
-                <option value="Staff Behavior">Staff Behavior</option>
-                <option value="Facility">Facility</option>
-                <option value="Wait Time">Wait Time</option>
-              </select>
-            </div>
-
-            <div class="filter-item">
-              <label>&nbsp;</label>
-              <button class="btn-refresh" id="refresh-btn">Refresh</button>
-            </div>
-          </div>
-
-          <div class="search-box">
-            <img src="icons/search.svg" height="40px" width="40px" />
-            <input
-              type="text"
-              id="search-input"
-              placeholder="Search by respondent or ID..."
-            />
-          </div>
-        </div>
-
-        <!-- Table -->
-        <div class="table-container">
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>Response ID</th>
-                <th>Date Submitted</th>
-                <th>Respondent</th>
-                <th>Branch/Category</th>
-                <th>Avg. Score</th>
-                <th style="text-align: center">View Details</th>
-              </tr>
-            </thead>
-            <tbody id="responses-tbody">
-              <!-- Example Row -->
-              <tr>
-                <td class="response-id">R-0001</td>
-                <td>2025-11-08 14:32</td>
-
-                <td>
-                  <div class="branch-info">Branch A</div>
-                  <div class="category-info">Service Quality</div>
-                </td>
-                <td>
-                  <span class="score-badge score-high">5.0</span>
-                </td>
-                <td style="text-align: center">
-                  <button class="btn-view" onclick="showModal('R-0001')">
-                    <img src="icons/eye.svg" height="40px" width="40px" />
-                    View
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td class="response-id">R-0002</td>
-                <td>2025-11-08 11:20</td>
-                <td>
-                  <div class="branch-info">Branch A</div>
-                  <div class="category-info">Staff</div>
-                </td>
-                <td>
-                  <span class="score-badge score-medium">3.0</span>
-                </td>
-                <td style="text-align: center">
-                  <button class="btn-view" onclick="showModal('R-0002')">
-                    <img src="icons/eye.svg" alt="View" class="icon" /> View
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td class="response-id">R-0003</td>
-                <td>2025-11-07 16:15</td>
-                <td>
-                  <div class="branch-info">Branch B</div>
-                  <div class="category-info">Service Quality</div>
-                </td>
-                <td>
-                  <span class="score-badge score-high">5.0</span>
-                </td>
-                <td style="text-align: center">
-                  <button class="btn-view" onclick="showModal('R-0003')">
-                    <img src="icons/eye.svg" alt="View" class="icon" /> View
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td class="response-id">R-0004</td>
-                <td>2025-11-07 09:45</td>
-                <td>
-                  <div class="branch-info">Branch A</div>
-                  <div class="category-info">Facility</div>
-                </td>
-                <td>
-                  <span class="score-badge score-high">4.0</span>
-                </td>
-                <td style="text-align: center">
-                  <button class="btn-view" onclick="showModal('R-0004')">
-                    <img src="icons/eye.svg" alt="View" class="icon" /> View
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td class="response-id">R-0005</td>
-                <td>2025-11-06 13:30</td>
-                <td>
-                  <div class="branch-info">Branch B</div>
-                  <div class="category-info">Staff</div>
-                </td>
-                <td>
-                  <span class="score-badge score-medium">3.5</span>
-                </td>
-                <td style="text-align: center">
-                  <button class="btn-view" onclick="showModal('R-0005')">
-                    <img src="icons/eye.svg" alt="View" class="icon" /> View
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td class="response-id">R-0006</td>
-                <td>2025-11-06 10:15</td>
-                <td>
-                  <div class="branch-info">Branch A</div>
-                  <div class="category-info">Facility</div>
-                </td>
-                <td>
-                  <span class="score-badge score-high">4.0</span>
-                </td>
-                <td style="text-align: center">
-                  <button class="btn-view" onclick="showModal('R-0006')">
-                    <img src="icons/eye.svg" alt="View" class="icon" /> View
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="pagination">
-            <div class="pagination-info" id="page-info">Page 1 of 2</div>
-            <div class="pagination-buttons">
-              <button class="pagination-btn" id="prev-btn" onclick="prevPage()">
-                <img src="icons/arrow_left.svg" height="20px" width="20px" />
-              </button>
-              <button class="pagination-btn" id="next-btn" onclick="nextPage()">
-                <img src="icons/arrow_right.svg" height="20px" width="20px" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- Modal -->
-    <div
-      id="response-modal"
-      class="modal-overlay hidden"
-      onclick="if(event.target === this) closeModal()"
-    >
-      <div class="modal">
-        <div class="modal-header">
-          <div>
-            <h3 class="modal-title">Response Details</h3>
-            <p class="modal-subtitle" id="modal-id">
-              R-0001 • 2025-11-08 14:32
-            </p>
-          </div>
-          <button class="modal-close" onclick="closeModal()">  <img src="icons/Close_MD.svg" height="25px" width="25px" /></button>
-        </div>
-
-        <div class="modal-body">
-          <div class="info-box">
-            <h4>Respondent Information</h4>
-            <div class="info-grid">
-              <div class="info-item">
-                <p>Respondent</p>
-                <p id="modal-respondent">Anonymous</p>
-              </div>
-              <div class="info-item">
-                <p>Branch</p>
-                <p id="modal-branch">Branch A</p>
-              </div>
-              <div class="info-item">
-                <p>Category</p>
-                <p id="modal-category">Service Quality</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="answers-section">
-            <h4>Questions & Answers</h4>
-            <div id="modal-answers">
-              <div class="answer-item">
-                <p class="answer-question">
-                  Q1: How satisfied are you with our service?
-                </p>
-                <p class="answer-text">5 - Very Satisfied</p>
-              </div>
-              <div class="answer-item">
-                <p class="answer-question">Q2: How would you rate our staff?</p>
-                <p class="answer-text">5 - Excellent</p>
-              </div>
-              <div class="answer-item">
-                <p class="answer-question">Q3: What can we improve?</p>
-                <p class="answer-text">Nothing, everything was perfect!</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal-footer">
-          <button class="btn-primary">
-            <img src="icons/export.svg" height="25px" width="25px" />Export this response 
-          </button>
-        </div>
-      </div>
-    </div>
-
+    </main>
     <script src="responses.js"></script>
-  </body>
+</body>
 </html>

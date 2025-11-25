@@ -1,181 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reports | Admin Dashboard</title>
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Survey System</title>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- Sidebar -->
+</head>
+<body>
     <aside class="sidebar">
-      <div class="logo-section">
-        <div class="logo-box">
-          <div class="logo-icon">
-            <span>S</span>
-          </div>
-          <div class="logo-text">
-            <h1>Survey</h1>
-            <p>Admin Panel</p>
-          </div>
+        <div class="sidebar-header">
+            <div class="survey-info">
+                <div class="survey-logo">S</div>
+                <div class="survey-details">
+                    <h3>Survey</h3>
+                    <p>Admin Panel</p>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <nav class="nav-menu">
-        <button class="nav-item" onclick="location.href='dashboard.html'">
-          Dashboard
-        </button>
-
-        <button class="nav-item" onclick="location.href='questions.html'">
-          Questions
-        </button>
-
-        <button class="nav-item" onclick="location.href='responses.html'">
-          Responses
-        </button>
-
-        <button class="nav-item active">Reports</button>
-
-      </nav>
+        <nav class="nav-menu">
+            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="questions.html" class="nav-item">Questions</a>
+            <a href="responses.html" class="nav-item">Responses</a>
+            <a href="reports.html" class="nav-item active">Reports</a>
+        </nav>
     </aside>
 
-    <!-- Main Content -->
-    <div class="main-content">
-      <!-- Header -->
-      <header class="header">
-        <h2>Reports</h2>
-        <div class="user-profile">
-          <img src="icons/profile.svg" height="40px" width="40px">
-          <div class="user-info">
-            <p>Admin User</p>
-            <span>Administrator</span>
-          </div>
+    <main class="main-content">
+        <header class="header">
+            <h1>Reports</h1>
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="icons/User_01.png" alt="User" class="icon">
+                </div>
+                <div class="user-info">
+                    <h4>Admin User</h4>
+                    <p>Administrator</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-content">
+            <!-- Filters -->
+            <div class="filter-section">
+                <div class="filter-grid">
+                    <div class="filter-item">
+                        <label>Select Survey</label>
+                        <select>
+                            <option>All Surveys</option>
+                            <option>Customer Satisfaction 2025</option>
+                            <option>Service Quality Q4</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label>Date From</label>
+                        <input type="date">
+                    </div>
+                    <div class="filter-item">
+                        <label>Date To</label>
+                        <input type="date">
+                    </div>
+                    <div class="filter-item">
+                        <label>Branch</label>
+                        <select>
+                            <option>All Branches</option>
+                            <option>Branch A</option>
+                            <option>Branch B</option>
+                            <option>Branch C</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="export-buttons">
+                    <button class="btn btn-secondary">Export as Excel</button>
+                    <button class="btn btn-secondary">Export as PDF</button>
+                </div>
+            </div>
+
+            <!-- Summary Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Responses</h3>
+                    <div class="stat-value">827</div>
+                </div>
+                <div class="stat-card highlight">
+                    <h3>Avg. Satisfaction</h3>
+                    <div class="stat-value">4.0/5</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Top Branch</h3>
+                    <div class="stat-value">Branch B</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Lowest Branch</h3>
+                    <div class="stat-value">Branch C</div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Satisfaction Trend Over Time</h3>
+                    <canvas id="line-chart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Branch Comparison</h3>
+                    <canvas id="bar-chart"></canvas>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>Service Feedback Breakdown</h3>
+                    <canvas id="pie-chart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Survey Distribution by Category</h3>
+                    <canvas id="donut-chart"></canvas>
+                </div>
+            </div>
         </div>
-      </header>
-
-      <!-- Page Content -->
-      <div class="page-content">
-        <!-- Filters -->
-        <div class="filter-section">
-          <div
-            class="filter-grid"
-            style="grid-template-columns: repeat(4, 1fr)"
-          >
-            <div class="filter-item">
-              <label>Select Survey</label>
-              <select>
-                <option>All Surveys</option>
-                <option>Customer Satisfaction 2025</option>
-                <option>Service Quality Q4</option>
-              </select>
-            </div>
-
-            <div class="filter-item">
-              <label>Date From</label>
-              <input type="date" />
-            </div>
-
-            <div class="filter-item">
-              <label>Date To</label>
-              <input type="date" />
-            </div>
-
-            <div class="filter-item">
-              <label>Branch</label>
-              <select>
-                <option>All Branches</option>
-                <option>Branch A</option>
-                <option>Branch B</option>
-                <option>Branch C</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="export-buttons">
-            <button class="btn-export btn-excel">
-              <img src="icons/export.svg" height="20px" width="20px" />Export as Excel
-            </button>
-            <button class="btn-export btn-pdf">
-              <img src="icons/pdf.svg" height="20px" width="20px" />Export as PDF
-            </button>
-          </div>
-        </div>
-
-        <!-- Summary Cards -->
-        <div class="summary-cards">
-          <div class="stat-card">
-            <div class="stat-info">
-              <p>Total Responses</p>
-              <div class="stat-value">827</div>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-info">
-              <p>Avg. Satisfaction</p>
-              <div class="stat-value">4.0/5</div>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-info">
-              <p>Top Branch</p>
-              <div class="stat-value" style="font-size: 20px">Branch B</div>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-info">
-              <p>Lowest Branch</p>
-              <div class="stat-value" style="font-size: 20px">Branch C</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Charts Row 1 -->
-        <div class="charts-grid">
-          <div class="chart-card">
-            <h3 class="chart-title">Satisfaction Trend Over Time</h3>
-            <div class="chart-container">
-              <canvas id="line-chart"></canvas>
-            </div>
-          </div>
-
-          <div class="chart-card">
-            <h3 class="chart-title">Branch Comparison</h3>
-            <div class="chart-container">
-              <canvas id="bar-chart"></canvas>
-            </div>
-          </div>
-        </div>
-
-        <!-- Charts Row 2 -->
-        <div class="charts-grid">
-          <div class="chart-card">
-            <h3 class="chart-title">Service Feedback Breakdown</h3>
-            <div class="chart-container">
-              <canvas id="pie-chart"></canvas>
-            </div>
-          </div>
-
-          <div class="chart-card">
-            <h3 class="chart-title">Survey Distribution by Category</h3>
-            <div class="chart-container">
-              <canvas id="donut-chart"></canvas>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- JavaScript -->
+    </main>
     <script src="reports.js"></script>
-  </body>
+</body>
 </html>
-
