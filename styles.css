@@ -1335,32 +1335,7 @@ body.survey-page {
     cursor: pointer;
 }
 
-.name-field {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.name-label {
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #2b2d42;
-}
-
-.name-input {
-    padding: 12px 15px;
-    border-radius: 8px;
-    border: 1px solid #cbd5e1;
-    font-size: 15px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.name-input:focus {
-    outline: none;
-    border-color: #2b2d42;
-}
-
-/* ========== USER MANAGEMENT PAGE ========== */
+                                                                                /* ========== USER MANAGEMENT PAGE ========== */
 .section-card {
     background: white;
     padding-top: 15px;

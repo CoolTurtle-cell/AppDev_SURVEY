@@ -9,16 +9,12 @@
 </head>
 
 <body class="survey-page">
-
     <div class="survey-container">
-
-        <!-- Header / Title Card -->
         <div class="survey-header-card">
             <h1>Consent Form</h1>
             <p>Please read the information below before participating in the survey.</p>
         </div>
 
-        <!-- Consent Content Card -->
         <div class="survey-question-card">
             <div class="question-label">
                 <h3>Participant Information & Consent</h3>
@@ -40,33 +36,21 @@
                 </p>
             </div>
 
-            <div class="name-field">
-                <label for="participantName" class="name-label"> Name <span style="color:red">*</span></label>
-                <input type="text" id="participantName" class="name-input" placeholder="Enter your name" required>
-            </div>
-
             <label class="consent-checkbox">
                 <input type="checkbox" id="agreeCheckbox" required>
                 <span>I agree to participate in this survey.</span>
             </label>
         </div>
 
-        <!-- Button -->
         <div class="survey-actions">
             <button class="submit-survey-btn" onclick="proceedToSurvey()">Continue to Survey</button>
         </div>
 
     </div>
 
-    <script>
+    <script> /*Check box*/
         function proceedToSurvey() {
             const agree = document.getElementById('agreeCheckbox');
-            const name = document.getElementById('participantName').value.trim();
-
-            if (name === "") {
-                alert("Please enter your name before continuing.");
-                return;
-            }
 
             if (!agree.checked) {
                 alert("Please agree to the consent form before continuing.");
