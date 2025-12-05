@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management - Survey System</title>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="survey-info">
+                <div class="survey-logo">S</div>
+                <div class="survey-details">
+                    <h3>Survey</h3>
+                    <p>Admin Panel</p>
+                </div>
+            </div>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="user_management.html" class="nav-item active">Users</a>
+            <a href="questions.html" class="nav-item">Questions</a>
+            <a href="responses.html" class="nav-item">Responses</a>
+            <a href="reports.html" class="nav-item">Reports</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1>Users Management</h1>
+
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <img src="icons/User_01.png" alt="User" class="icon">
+                </div>
+                <div class="user-info">
+                    <h4>Admin User</h4>
+                    <p>Administrator</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-content">
+            <div class="section-card">
+                <div class="section-header">
+                    <h2 class="section-title1">Users</h2>
+
+                    <div class="search-wrapper">
+                        <img src="icons/search.png" class="search-icon">
+                        <input type="text" id="searchInput" class="search-bar" placeholder="Search by Name, Branch, or Role">
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="users-table" id="users-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Branch</th>
+                                <th>Role</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Chaelsy</td>
+                                <td>chaelsy@gmail.com</td>
+                                <td>Branch A</td>
+                                <td>Super Admin</td>
+                                <td><button class="view-btn edit-btn"><img src="icons/edit.png" class="btn-icon-small">Edit</button></td>
+                                <td><button class="view-btn delete-btn"><img src="icons/delete.png" class="btn-icon-small">Delete</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>Mark Jerald</td>
+                                <td>markjerald@gmail.com</td>
+                                <td>Branch B</td>
+                                <td>Admin</td>
+                                <td><button class="view-btn edit-btn"><img src="icons/edit.png" class="btn-icon-small">Edit</button></td>
+                                <td><button class="view-btn delete-btn"><img src="icons/delete.png" class="btn-icon-small">Delete</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>Aljoseph</td>
+                                <td>aljoseph@gmail.com</td>
+                                <td>Branch C</td>
+                                <td>Staff</td>
+                                <td><button class="view-btn edit-btn"><img src="icons/edit.png" class="btn-icon-small">Edit</button></td>
+                                <td><button class="view-btn delete-btn"><img src="icons/delete.png" class="btn-icon-small">Delete</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Pending Requests Section -->
+            <div class="section-card">
+                <h2 class="section-title2">Pending Requests</h2>
+
+                <div class="table-container">
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Branch</th>
+                                <th>Requested Role</th>
+                                <th>Approve</th>
+                                <th>Deny</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Jas</td>
+                                <td>jas@gmail.com</td>
+                                <td>Branch A</td>
+                                <td>Admin</td>
+                                <td><button class="view-btn approve-btn"><img src="icons/check.png" class="btn-icon-small">Approve</button></td>
+                                <td><button class="view-btn deny-btn"><img src="icons/x.png" class="btn-icon-small">Deny</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>Kyla</td>
+                                <td>kyla@gmail.com</td>
+                                <td>Branch B</td>
+                                <td>Admin</td>
+                                <td><button class="view-btn approve-btn"><img src="icons/check.png" class="btn-icon-small">Approve</button></td>
+                                <td><button class="view-btn deny-btn"><img src="icons/x.png" class="btn-icon-small">Deny</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Search Function -->
+    <script>
+        document.getElementById("searchInput").addEventListener("keyup", function () {
+            let filter = this.value.toLowerCase();
+            let rows = document.querySelectorAll("#users-table tbody tr");
+
+            rows.forEach(row => {
+                let name = row.children[0].textContent.toLowerCase();
+                let branch = row.children[2].textContent.toLowerCase();
+                let role = row.children[3].textContent.toLowerCase();
+
+                if (name.includes(filter) || branch.includes(filter) || role.includes(filter)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

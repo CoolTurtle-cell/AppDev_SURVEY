@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consent Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="survey-page">
+    <div class="survey-container">
+        <div class="survey-header-card">
+            <h1>Consent Form</h1>
+            <p>Please read the information below before participating in the survey.</p>
+        </div>
+
+        <div class="survey-question-card">
+            <div class="question-label">
+                <h3>Participant Information & Consent</h3>
+            </div>
+
+            <div class="consent-text">
+                <p>
+                    You are invited to participate in a customer feedback survey. Your responses will be used solely
+                    for service improvement and research evaluation.
+                </p>
+                <p>
+                    Participation is voluntary. You may decline to answer any question or withdraw at any time without penalty.
+                </p>
+                <p>
+                    All responses will remain confidential.
+                </p>
+                <p>
+                    By checking the box below, you acknowledge that you have read and understood the information provided.
+                </p>
+            </div>
+
+            <label class="consent-checkbox">
+                <input type="checkbox" id="agreeCheckbox" required>
+                <span>I agree to participate in this survey.</span>
+            </label>
+        </div>
+
+        <div class="survey-actions">
+            <button class="submit-survey-btn" onclick="proceedToSurvey()">Continue to Survey</button>
+        </div>
+
+    </div>
+
+    <script> /*Check box*/
+        function proceedToSurvey() {
+            const agree = document.getElementById('agreeCheckbox');
+
+            if (!agree.checked) {
+                alert("Please agree to the consent form before continuing.");
+                return;
+            }
+
+            window.location.href = "mainsurvey.html";
+        }
+    </script>
+
+</body>
+</html>
