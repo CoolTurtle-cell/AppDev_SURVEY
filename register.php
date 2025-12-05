@@ -78,51 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <title>Register Page - Survey System</title>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    .password-indicator {
-      margin-top: 8px;
-      padding: 10px 14px;
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: 500;
-      display: none;
-      transition: all 0.3s ease;
-    }
-
-    .password-indicator.show {
-      display: block;
-    }
-
-    .password-indicator.match {
-      background-color: #dcfce7;
-      color: #16a34a;
-      border: 1px solid #86efac;
-    }
-
-    .password-indicator.match::before {
-      content: "✓ ";
-      font-weight: bold;
-    }
-
-    .password-indicator.no-match {
-      background-color: #fee2e2;
-      color: #dc2626;
-      border: 1px solid #fca5a5;
-    }
-
-    .password-indicator.no-match::before {
-      content: "✗ ";
-      font-weight: bold;
-    }
-
-    .form-group input.password-match {
-      border-color: #16a34a !important;
-    }
-
-    .form-group input.password-no-match {
-      border-color: #dc2626 !important;
-    }
-  </style>
+  
 </head>
 <body class="login-page">
   <div class="register-container">
@@ -254,7 +210,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </button>
 
         <div class="login-link">
-          Already have an account? <a href="admin.html">Login</a>
+          Already have an account? <a href="login.php">Login</a>
         </div>
       </form>
     </div>
@@ -438,7 +394,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     function closeModal() {
       document.getElementById('successModal').classList.remove('show');
-      window.location.href = 'admin.html';
+      window.location.href = 'login.php';
     }
   </script>
 </body>

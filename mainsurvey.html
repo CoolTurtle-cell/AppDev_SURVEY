@@ -15,6 +15,24 @@
         </div>
 
         <form class="survey-form" id="surveyForm">
+
+<div class="user-info-section">
+    <h2>Your Information</h2>
+    <p>These details are optional and help us improve our service.</p>
+
+    <div class="user-input-group">
+        <label>Name <span class="optional-tag">Optional</span></label>
+        <input type="text" name="user_name" placeholder="Enter your name (optional)">
+    </div>
+
+    <div class="user-input-group">
+        <label>Email <span class="optional-tag">Optional</span></label>
+        <input type="email" name="user_email" placeholder="Enter your email (optional)">
+    </div>
+</div>
+
+            <!-- END OPTIONAL SECTION -->
+
             <!-- Question 1 -->
             <div class="survey-question-card">
                 <div class="question-label">
@@ -139,10 +157,8 @@
         document.getElementById('surveyForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Show success message
             alert('Thank you for completing the survey! Your feedback has been submitted.');
             
-            // Reset form
             this.reset();
         });
     </script>
