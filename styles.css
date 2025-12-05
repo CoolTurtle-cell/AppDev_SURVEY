@@ -1366,7 +1366,7 @@ body.survey-page {
 
 .search-wrapper .search-icon {
     position: absolute;
-    left: 10px;
+    left: 20px;
     top: 50%;
     transform: translateY(-50%);
     width: 18px;
@@ -1400,6 +1400,752 @@ body.survey-page {
 .deny-btn {
     background-color: #dc2626;
     color: white;
+}
+
+/* ===== OPTIONAL USER INFO FIELDS ===== */
+.user-info-section {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.user-info-section h2 {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #1e293b;
+}
+
+.user-info-section p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 20px;
+}
+
+/* Input wrapper */
+.user-input-group {
+    margin-bottom: 18px;
+}
+
+.user-input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 6px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.user-input-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.2s ease;
+    background: #f8fafc;
+}
+
+/* Focus effect */
+.user-input-group input:focus {
+    border-color: #3b82f6;
+    outline: none;
+    background: #ffffff;
+    box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
+}
+
+/* Optional badge */
+.optional-tag {
+    font-size: 12px;
+    color: #64748b;
+    background: #e2e8f0;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-left: 6px;
+    font-weight: 500;
+}
+
+/* ========== EXTRACTED INLINE STYLES ========== */
+
+/* ===== CONSENT PAGE STYLES ===== */
+.consent-text {
+    margin: 20px 0;
+    line-height: 1.8;
+}
+
+.consent-text p {
+    margin-bottom: 15px;
+    color: #334155;
+    font-size: 15px;
+}
+
+.consent-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 2px solid #e2e8f0;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.consent-checkbox:hover {
+    border-color: #0080aa;
+    background: #f1f5f9;
+}
+
+.consent-checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #0080aa;
+}
+
+.consent-checkbox span {
+    font-size: 15px;
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.consent-checkbox.checked {
+    border-color: #0080aa;
+    background: #e0f2fe;
+}
+
+/* ===== MAINSURVEY THANK YOU PAGE STYLES ===== */
+body.survey-page.thank-you-page {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.thank-you-container {
+    max-width: 650px;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 50px 40px;
+    text-align: center;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.thank-you-container .success-icon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    animation: scaleIn 0.6s ease-out;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0) rotate(-180deg);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1) rotate(10deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.thank-you-container .success-icon svg {
+    width: 50px;
+    height: 50px;
+    color: white;
+    stroke-width: 3;
+}
+
+.thank-you-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 15px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.thank-you-message {
+    font-size: 17px;
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.survey-name {
+    font-weight: 600;
+    color: #667eea;
+    display: block;
+    margin-top: 8px;
+}
+
+.response-recorded {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #dcfce7;
+    color: #16a34a;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 25px 0;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+    margin: 35px 0;
+}
+
+.actions-section h3 {
+    font-size: 20px;
+    color: #334155;
+    margin-bottom: 20px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.btn-action {
+    padding: 16px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary-action {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary-action:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.btn-secondary-action {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.btn-secondary-action:hover {
+    background: #f8f9ff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+}
+
+.footer-note {
+    margin-top: 35px;
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: #f0f;
+    animation: confetti-fall 3s linear forwards;
+}
+
+@keyframes confetti-fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ===== QUESTIONS PAGE STYLES ===== */
+.survey-header-info {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #0080aa;
+}
+
+.survey-header-info h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 5px;
+}
+
+.survey-header-info p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.add-question-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.add-question-modal.show {
+    display: flex;
+}
+
+.modal-box-large {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 700px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-box-large .form-group {
+    margin-bottom: 20px;
+}
+
+.modal-box-large label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #334155;
+    margin-bottom: 8px;
+}
+
+.modal-box-large input[type="text"],
+.modal-box-large textarea,
+.modal-box-large select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal-box-large textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.options-container {
+    display: none;
+    margin-top: 15px;
+}
+
+.options-container.show {
+    display: block;
+}
+
+.option-input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.option-input-group input {
+    flex: 1;
+}
+
+.remove-option-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.add-option-btn {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+.modal-footer {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.modal-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal-btn-save {
+    background: #0080aa;
+    color: white;
+}
+
+.modal-btn-cancel {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+/* ===== REGISTER PAGE STYLES ===== */
+.password-indicator {
+    margin-top: 8px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.password-indicator.show {
+    display: block;
+}
+
+.password-indicator.match {
+    background-color: #dcfce7;
+    color: #16a34a;
+    border: 1px solid #86efac;
+}
+
+.password-indicator.match::before {
+    content: "✓ ";
+    font-weight: bold;
+}
+
+.password-indicator.no-match {
+    background-color: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #fca5a5;
+}
+
+.password-indicator.no-match::before {
+    content: "✗ ";
+    font-weight: bold;
+}
+
+.form-group input.password-match {
+    border-color: #16a34a !important;
+}
+
+.form-group input.password-no-match {
+    border-color: #dc2626 !important;
+}
+
+/* ===== USER INFO SECTION (MAINSURVEY) ===== */
+.user-info-section {
+    background: #F4F7F9;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-info-section h2 {
+    font-size: 20px;
+    color: #1e293b;
+    margin-bottom: 8px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.user-info-section > p {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.user-input-group {
+    margin-bottom: 15px;
+}
+
+.user-input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+.optional-tag {
+    font-size: 12px;
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+.user-input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #334155;
+}
+
+.user-input-group input:focus {
+    outline: none;
+    border-color: #0080aa;
+}
+
+.choice-option input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    cursor: pointer;
+    accent-color: #0080aa;
+}
+
+/* ===== SURVEYS PAGE QR CODE & SHARE MODAL ===== */
+.survey-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s;
+}
+
+.survey-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.survey-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.survey-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e293b;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.survey-status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.survey-status.active {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.survey-status.inactive {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.survey-status.draft {
+    background: #fef3c7;
+    color: #ca8a04;
+}
+
+.survey-meta {
+    display: flex;
+    gap: 20px;
+    margin: 15px 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.survey-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-box {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.share-content {
+    text-align: center;
+}
+
+.qr-code-container {
+    margin: 20px 0;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.share-link-box {
+    background: #f1f5f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    word-break: break-all;
+}
+
+.share-link-box input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    background: white;
+}
+
+.copy-btn {
+    background: #0080aa;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.3s;
+}
+
+.copy-btn:hover {
+    background: #006d8f;
+}
+
+.copy-btn.copied {
+    background: #10b981;
+}
+
+.download-qr-btn {
+    background: #8b5cf6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.share-instructions {
+    text-align: left;
+    margin-top: 20px;
+    padding: 15px;
+    background: #dbeafe;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #1e40af;
+}
+
+.share-instructions ul {
+    margin: 10px 0 0 20px;
 }
 
 /* ========== RESPONSIVE DESIGN ========== */

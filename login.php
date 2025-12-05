@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['account_type'] = $user['AccountType'];
 
             echo "<script>alert('Login successful! Welcome, {$user['Name']}'); 
-                  window.location.href='user_management.html';</script>";
+                  window.location.href='user_management.php';</script>";
             exit();
 
         } else {

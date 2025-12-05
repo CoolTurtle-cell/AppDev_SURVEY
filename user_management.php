@@ -8,6 +8,26 @@ if (!isset($_SESSION['admin_id'])) {
     exit();
 }
 
+// Check if user is Super Admin
+if ($_SESSION['account_type'] !== 'SuperAdmin') {
+    echo '<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Access Denied</title>
+        <script>
+            alert("Access Denied: You must be a Super Admin to access User Management.");
+            window.location.href = "dashboard.html";
+        </script>
+    </head>
+    <body>
+        <p>Redirecting...</p>
+    </body>
+    </html>';
+    exit();
+}
+
 // Handle AJAX requests for approve, deny, delete
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['action'])) {
     header('Content-Type: application/json');
@@ -336,9 +356,9 @@ $conn->close();
 
         <nav class="nav-menu">
             <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="surveys.php" class="nav-item">Surveys</a>
             <a href="user_management.php" class="nav-item active">Users</a>
-            <a href="questions.html" class="nav-item">Questions</a>
-            <a href="responses.html" class="nav-item">Responses</a>
+            <a href="responses.php" class="nav-item">Responses</a>
             <a href="reports.html" class="nav-item">Reports</a>
         </nav>
     </aside>
