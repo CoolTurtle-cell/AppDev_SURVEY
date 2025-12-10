@@ -110,7 +110,7 @@ $conn->close();
             <a href="surveys.php" class="nav-item active">Surveys</a>
             <a href="user_management.php" class="nav-item">Users</a>
             <a href="responses.php" class="nav-item">Responses</a>
-            <a href="reports.html" class="nav-item">Reports</a>
+            <a href="reports.php" class="nav-item">Reports</a>
         </nav>
     </aside>
 

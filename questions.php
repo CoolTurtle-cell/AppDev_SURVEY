@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['action'])) {
             if (isset($_POST['options']) && !empty($_POST['options'])) {
                 $options = json_decode($_POST['options'], true);
                 $optionStmt = $conn->prepare("INSERT INTO survey_options (question_id, option_text, option_value, order_num) VALUES (?, ?, ?, ?)");
-                
+
                 foreach ($options as $index => $option) {
                     $optionValue = strtolower(str_replace(' ', '_', $option));
                     $optionStmt->bind_param("issi", $questionId, $option, $optionValue, $index);
@@ -70,6 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['action'])) {
                 }
                 $optionStmt->close();
             }
+
             
             echo json_encode(['success' => true, 'message' => 'Question added successfully', 'question_id' => $questionId]);
         } else {
@@ -202,7 +203,7 @@ $conn->close();
             </div>
         </div>
         <nav class="nav-menu">
-            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="dashboard.php" class="nav-item">Dashboard</a>
             <a href="surveys.php" class="nav-item">Surveys</a>
             <a href="user_management.php" class="nav-item">Users</a>
             <a href="questions.php?survey_id=<?php echo $surveyId; ?>" class="nav-item active">Questions</a>
@@ -366,10 +367,10 @@ $conn->close();
         function toggleOptions() {
             const type = document.getElementById('questionType').value;
             const container = document.getElementById('optionsContainer');
-            
+
             if (type === 'multiple_choice' || type === 'checkbox' || type === 'yes_no') {
                 container.classList.add('show');
-                
+
                 // Pre-fill for yes/no
                 if (type === 'yes_no') {
                     document.getElementById('optionsList').innerHTML = `

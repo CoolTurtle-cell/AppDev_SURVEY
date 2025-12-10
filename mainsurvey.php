@@ -212,8 +212,11 @@ if ($result) {
             $options[] = $option;
         }
         $optionsStmt->close();
-        
+
         $row['options'] = $options;
+
+
+
         $questions[] = $row;
     }
 }
@@ -326,6 +329,8 @@ $conn->close();
                                     </label>
                                 <?php endforeach; ?>
                             </div>
+
+
                         <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
