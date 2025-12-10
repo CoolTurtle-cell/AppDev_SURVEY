@@ -720,8 +720,17 @@ body.survey-page {
     gap: 12px;
 }
 
+.likert-options {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
 .rating-option,
-.choice-option {
+.choice-option,
+.likert-option {
     display: flex;
     align-items: center;
     padding: 14px 18px;
@@ -733,13 +742,15 @@ body.survey-page {
 }
 
 .rating-option:hover,
-.choice-option:hover {
+.choice-option:hover,
+.likert-option:hover {
     background-color: #f1f5f9;
     border-color: #cbd5e1;
 }
 
 .rating-option input[type="radio"],
-.choice-option input[type="checkbox"] {
+.choice-option input[type="checkbox"],
+.likert-option input[type="radio"] {
     width: 20px;
     height: 20px;
     margin-right: 12px;
@@ -748,13 +759,15 @@ body.survey-page {
 }
 
 .rating-option:has(input:checked),
-.choice-option:has(input:checked) {
+.choice-option:has(input:checked),
+.likert-option:has(input:checked) {
     background-color: #e0f2fe;
     border-color: #0080aa;
 }
 
 .rating-label,
-.choice-label {
+.choice-label,
+.likert-label {
     font-size: 15px;
     color: #334155;
     font-weight: 400;
@@ -2146,6 +2159,184 @@ body.survey-page.thank-you-page {
 
 .share-instructions ul {
     margin: 10px 0 0 20px;
+}
+
+/* Question Analytics Styles */
+.question-analytics-section {
+    margin-top: 40px;
+    padding: 0;
+}
+
+.question-analytics-section h2 {
+    color: #1e293b;
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.question-card {
+    background: white;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    transition: box-shadow 0.3s ease;
+}
+
+.question-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.question-card h3 {
+    color: #0080aa;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'League Spartan', sans-serif;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.question-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+}
+
+.stat-label {
+    font-weight: 500;
+    color: #64748b;
+    min-width: 140px;
+    font-size: 14px;
+}
+
+.stat-value {
+    font-weight: 700;
+    color: #0080aa;
+    font-size: 18px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.rating-distribution {
+    margin-top: 8px;
+    padding: 16px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    border-left: 4px solid #0080aa;
+}
+
+.rating-distribution h4,
+.text-responses h4 {
+    color: #1e293b;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rating-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.rating-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+}
+
+.rating-label {
+    min-width: 85px;
+    font-weight: 500;
+    color: #475569;
+    font-size: 13px;
+}
+
+.bar-container {
+    flex: 1;
+    height: 24px;
+    background: #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    min-width: 100px;
+}
+
+.bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #0080aa, #00a8cc);
+    border-radius: 12px;
+    transition: width 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+}
+
+.rating-count {
+    min-width: 40px;
+    text-align: right;
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 13px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.text-responses {
+    margin-top: 8px;
+    padding: 16px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    border-left: 4px solid #0080aa;
+}
+
+.text-responses ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.text-responses li {
+    background: white;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    border-left: 3px solid #0080aa;
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.text-responses li:hover {
+    box-shadow: 0 2px 6px rgba(0, 128, 170, 0.15);
+    background: #f0f4f8;
+}
+
+.text-responses li:last-child {
+    margin-bottom: 0;
+}
+
+.text-responses p {
+    margin-top: 12px;
+    color: #64748b;
+    font-size: 13px;
+    font-style: italic;
+    padding-top: 8px;
+    border-top: 1px solid #e2e8f0;
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
